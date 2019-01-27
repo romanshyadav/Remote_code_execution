@@ -1,6 +1,6 @@
-######    
+#########################################################
 Mission provided by attack defense lab
-#####
+#########################################################
 This version of ApPHP MicroBlog is vulnerable to remote code execution attack. 
 Your task is to find and exploit this vulnerability.
 
@@ -15,15 +15,15 @@ Third goal: Find the exploit of the Vulnerability as it's a remote code executio
 
 Fourth goal: Read the exploit, read about the raw input ,vulnerable parameter and then try to first exploit manually(if not working ) then run the exploit.
 
-###########################################################
+#########################################################
 
 Version:  ApPHP MicroBlog 1.0.1
 
-###########################################################
+#########################################################
 
 Vulnerability:  ApPHP MicroBlog 1.0.1 - Multiple Vulnerabilities -Remote code execution, Lfi.
 
-###########################################################
+##########################################################
 Exploit-: 
 
 https://www.exploit-db.com/exploits/33030
@@ -34,10 +34,10 @@ https://www.exploit-db.com/exploits/33070
 # Version: ApPHP MicroBlog 1.0.1 (Free Version)
 # EDB-ID: 33030
 
-##############################################################
+###########################################################
 I have run this exploit from my cloud aws machine.
 
-##############################################################
+###########################################################
 
 ec2-user@kali:~$ python apphp-microblog.py http://7jrbh5p7kvo08jv2xwva7c276.public2.attackdefenselabs.com/index.php
   -= LOTFREE exploit for ApPHP MicroBlog 1.0.1 (Free Version) =-
